@@ -1,0 +1,6 @@
+float32 front_distance
+float32 left_distance
+float32 right_distance
+float32 min_distance
+string nearest_wall
+bool near_wall

@@ -1,0 +1,20 @@
+<launch>
+  <arg name="safe_distance" default="1.0"/>
+  <arg name="speed"         default="1.5"/>
+  <arg name="plot"          default="false"/>
+
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+
+  <node pkg="turtle_mission" type="virtual_sensor.py" name="virtual_sensor" output="screen">
+    <param name="safe_distance" value="$(arg safe_distance)"/>
+  </node>
+
+  <node pkg="turtle_mission" type="explorer.py" name="explorer" output="screen">
+    <param name="safe_distance" value="$(arg safe_distance)"/>
+    <param name="speed"         value="$(arg speed)"/>
+  </node>
+
+  <!-- optional live plot of the three rays: plot:=true -->
+  <node if="$(arg plot)" pkg="rqt_plot" type="rqt_plot" name="sensor_plot"
+        args="/wall_sensor/front_distance /wall_sensor/left_distance /wall_sensor/right_distance"/>
+</launch>

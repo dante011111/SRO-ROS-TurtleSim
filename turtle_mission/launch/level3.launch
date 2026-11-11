@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+  <node pkg="turtle_mission" type="hunter.py" name="hunter" output="screen">
+    <param name="rounds" value="5"/>
+  </node>
+</launch>

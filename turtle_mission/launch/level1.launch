@@ -1,0 +1,15 @@
+<launch>
+  <arg name="auto_start" default="false"/>
+
+  <rosparam command="load" file="$(find turtle_mission)/config/waypoints.yaml"/>
+
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+
+  <node pkg="turtle_mission" type="waypoint_controller.py"
+        name="waypoint_controller" output="screen"/>
+
+  <node pkg="turtle_mission" type="mission_manager.py"
+        name="mission_manager" output="screen">
+    <param name="auto_start" value="$(arg auto_start)"/>
+  </node>
+</launch>
