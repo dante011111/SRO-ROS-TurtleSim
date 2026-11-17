@@ -222,15 +222,17 @@ linear.x  = min( Kp_linear × distance, v_max ) × max(0, cos(heading_error))
 
 ```yaml
 mission:
-  tolerance: 0.05      # assignment requires < 0.1
-  kp_linear: 1.5
-  kp_angular: 4.0
+  tolerance: 0.05      # must be < 0.1 for the assignment
+  kp_linear: 0.8
+  kp_angular: 6.0
   max_linear: 2.0
   waypoints:
-    - [2.0, 2.0]
-    - [9.0, 2.0]
+    - [5.5, 9.0]
+    - [5.5, 2.0]
+    - [5.5, 5.5]
     - [9.0, 9.0]
-    - [2.0, 9.0]
+    - [5.5, 5.5]
+    - [9.0, 2.0]
 ```
 
 The waypoint list lives only in this file. To change the route, edit the list. No code changes are needed. The turtlesim arena spans roughly 0 to 11.08 on both axes, and the turtle starts near (5.54, 5.54).
