@@ -6,8 +6,8 @@ There is no keyboard teleop and no teleport service anywhere in this package.
 
 | | |
 |---|---|
-| **Author** | _Your Name_ (_Your Student ID_) |
-| **Course** | _Course name_ |
+| **Author** | Keindra Dante Hidayat (5022231236) |
+| **Course** | Sistem Robot Otonom |
 | **ROS version** | Noetic (Ubuntu 20.04), Python 3 |
 | **Package** | `turtle_mission` |
 
